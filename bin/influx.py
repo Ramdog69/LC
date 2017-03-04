@@ -18,10 +18,12 @@ json_body = [
       "fields":{
          "cashavailable": acctdata.availableCash(),
          "accounttotal": acctdata.accountTotal(),
-         "outstandingPrincipal": acctdata.outstandingPrincipal()
+         "outstandingPrincipal": acctdata.outstandingPrincipal(),
+         "primaryNAR":acctdata.primaryNAR()
       }
    }
 ]
 
 client = InfluxDBClient(dbhost, dbport, dbuser, dbpass, dbname)
 client.write_points(json_body)
+

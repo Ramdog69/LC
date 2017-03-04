@@ -25,3 +25,5 @@ class accData(object):
    def totalNotes(self):
       return self.summary_data['totalNotes']
 
+   def primaryNAR(self):
+      return self.summary_data['netAnnualizedReturn']['primaryAdjustedNAR']
