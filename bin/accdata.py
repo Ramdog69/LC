@@ -27,3 +27,12 @@ class accData(object):
 
    def primaryNAR(self):
       return self.summary_data['netAnnualizedReturn']['primaryAdjustedNAR']
+    
+   def receivedInterest(self):
+      return self.summary_data['receivedInterest']
+      
+   def receivedPrincipal(self):
+      return self.summary_data['receivedPrincipal']
+      
+   def receivedLateFees(self):
+      return self.summary_data['receivedLateFees']

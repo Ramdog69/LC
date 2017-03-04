@@ -20,6 +20,9 @@ json_body = [
          "accounttotal": acctdata.accountTotal(),
          "outstandingPrincipal": acctdata.outstandingPrincipal(),
          "primaryNAR":acctdata.primaryNAR()
+         "receivedInterest":acctdata.receivedInterest()
+         "receivedPrincipal":acctdata.receivedPrincipal()
+         "receivedLateFees":acctdata.receivedLateFees()
       }
    }
 ]
