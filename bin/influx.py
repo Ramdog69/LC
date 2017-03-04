@@ -19,9 +19,9 @@ json_body = [
          "cashavailable": acctdata.availableCash(),
          "accounttotal": acctdata.accountTotal(),
          "outstandingPrincipal": acctdata.outstandingPrincipal(),
-         "primaryNAR":acctdata.primaryNAR()
-         "receivedInterest":acctdata.receivedInterest()
-         "receivedPrincipal":acctdata.receivedPrincipal()
+         "primaryNAR":acctdata.primaryNAR(),
+         "receivedInterest":acctdata.receivedInterest(),
+         "receivedPrincipal":acctdata.receivedPrincipal(),
          "receivedLateFees":acctdata.receivedLateFees()
       }
    }
