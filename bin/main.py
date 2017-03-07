@@ -6,6 +6,7 @@ import influxclass
 
 confdata = confparse.confParse('/etc/lc/lc.data')
 acctdata = accdata.accData(confdata.investorID(),confdata.authKey())
+influxclass = influxclass.influxClass(confdata)
 dbhost = confdata.db_host()
 dbport = confdata.db_port()
 dbuser = confdata.db_user()
@@ -27,7 +28,7 @@ json_body = [
    }
 ]
 
-influxclass.influxClass.writeToDB(json_body, confdata)
+influxclass.writeToDB(json_body)
 #client = InfluxDBClient(dbhost, dbport, dbuser, dbpass, dbname)
 #client.write_points(json_body)
 
