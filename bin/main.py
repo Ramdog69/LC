@@ -28,7 +28,9 @@ json_body = [
    }
 ]
 
-influxclass.writeToDB(json_body)
+#influxclass.writeToDB(json_body)
+interest = influxclass.getInterest()
+print(interest)
 #client = InfluxDBClient(dbhost, dbport, dbuser, dbpass, dbname)
 #client.write_points(json_body)
 

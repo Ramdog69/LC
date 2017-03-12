@@ -13,4 +13,7 @@ class influxClass(object):
 
    def writeToDB(self, json_body):
       self.client.write_points(json_body)
+      
+   def getInterest(self):
+      return self.client.query('select receivedInterest from availablecash;')
 
