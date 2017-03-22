@@ -19,3 +19,7 @@ class influxClass(object):
       interest_json=self.client.query('select last(receivedInterest) from availablecash;')
       #Generate a list from the datapoints of the returned result set and return the dictionatry item 'last'
       return list(interest_json.get_points())[0].get('last')
+
+   def getPrincipal(self):
+      principal_json=self.client.query('select last(receivedPrincipal) from availablecash;')
+      return list(principal_json.get_points())[0].get('last')

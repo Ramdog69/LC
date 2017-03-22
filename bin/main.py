@@ -13,6 +13,9 @@ dbuser = confdata.db_user()
 dbpass = confdata.db_pass()
 dbname = confdata.db_name()
 
+diff_interest =  acctdata.receivedInterest() - influxclass.getInterest()
+diff_principal = acctdata.receivedPrincipal() - influxclass.getPrincipal()
+
 json_body = [
    {
       "measurement": "availablecash",
@@ -23,14 +26,12 @@ json_body = [
          "primaryNAR":acctdata.primaryNAR(),
          "receivedInterest":acctdata.receivedInterest(),
          "receivedPrincipal":acctdata.receivedPrincipal(),
-         "receivedLateFees":acctdata.receivedLateFees()
+         "receivedLateFees":acctdata.receivedLateFees(),
+         "lastInterest":diff_interest,
+         "lastPrincipal":diff_principal
       }
    }
 ]
 
-#influxclass.writeToDB(json_body)
-interest = influxclass.getInterest()
-print(interest)
-#client = InfluxDBClient(dbhost, dbport, dbuser, dbpass, dbname)
-#client.write_points(json_body)
+influxclass.writeToDB(json_body)
 
